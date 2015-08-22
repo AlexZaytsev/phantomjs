@@ -1,6 +1,6 @@
 
-if(!equals(QT_MAJOR_VERSION, 5)|!equals(QT_MINOR_VERSION, 3)) {
-    error("This program can only be compiled with Qt 5.3.x.")
+if(!equals(QT_MAJOR_VERSION, 5)|!equals(QT_MINOR_VERSION, 4)) {
+    error("This program can only be compiled with Qt 5.4.x.")
 }
 
 TEMPLATE = app
@@ -31,6 +31,8 @@ HEADERS += \
     webserver.h \
     consts.h \
     utils.h \
+    networkreplyproxy.h \
+    networkreplytracker.h \
     networkaccessmanager.h \
     cookiejar.h \
     filesystem.h \
@@ -49,6 +51,8 @@ SOURCES += phantom.cpp \
     webserver.cpp \
     main.cpp \
     utils.cpp \
+    networkreplyproxy.cpp \
+    networkreplytracker.cpp \
     networkaccessmanager.cpp \
     cookiejar.cpp \
     filesystem.cpp \
@@ -81,7 +85,7 @@ linux*|mac|openbsd* {
     SOURCES += breakpad/src/client/minidump_file_writer.cc \
       breakpad/src/common/convert_UTF.c \
       breakpad/src/common/md5.cc \
-      breakpad/src/common/string_conversion.cc 
+      breakpad/src/common/string_conversion.cc
 }
 
 linux* {
